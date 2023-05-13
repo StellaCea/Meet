@@ -1,10 +1,10 @@
-**Meet App** assists users in discovering, organizing and participating in events taking place in different cities.
+**Meet App** assists users in discovering, organizing and participating in events that take place in different cities.
 
 The app is a serverless, progressive web apllication (PWA) build with React using test-driven development technique. The application uses the Google Calendar API to fetch upcoming events. 
 
 **FEATURE 1: FILTER EVENTS BY CITY**
 
-__User story: **As a** user **I should be able to** see different events in different cities **So that** I can have a better overview of events in a specific city.__
+*User story: **As a** user **I should be able to** see different events in different cities **So that** I can have a better overview of events in a specific city.*
 
 **Scenario 1: When a user hasn’t searched for a city, show upcoming events from all cities.**
 **Given** user hasn’t searched for any city **When** the user opens the app **Then** the user should see a list of all upcoming events.
@@ -17,7 +17,7 @@ __User story: **As a** user **I should be able to** see different events in diff
 
 **FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS**
 
-__User story: **As a** user **I should be able to** show and hide event details **So that** I can get more information about a specific event I might be interested to attend.__
+*User story: **As a** user **I should be able to** show and hide event details **So that** I can get more information about a specific event I might be interested to attend.*
 
 **Scenario 1: An event element is collapsed by default.**
 **Given** the user was typing a city name in the city box **When** the user choses a city **Then** the list of upcoming events is displayed without any details.
@@ -30,7 +30,7 @@ __User story: **As a** user **I should be able to** show and hide event details 
 
 **FEATURE 3: SPECIFY NUMBER OF EVENTS**
 
-___User story: **As a** user **I should be able to** see a number of upcoming events **So that** I can plan better and make decisions about how to participate in events.__
+*User story: **As a** user **I should be able to** see a number of upcoming events **So that** I can plan better and make decisions about how to participate in events.*
 
 **Scenario 1: When the user hasn’t specified a number, 32 is the default number.**
 **Given** the user was typing the name of a city in the textbox **When** the user clicks on the city from the list of cities **Then** the number of upcoming events in that city is set to 32 by default.
@@ -40,7 +40,7 @@ ___User story: **As a** user **I should be able to** see a number of upcoming ev
 
 **FEATURE 4: USE THE APP WHEN OFFLINE**
 
-__User story: **As a** user **I should be able to** use the app offline **So that** I can have access to the information when there is no internet connection.__
+*User story: **As a** user **I should be able to** use the app offline **So that** I can have access to the information when there is no internet connection.*
 
 **Scenario 1: Show cached data when there’s no internet connection.**
 **Given** there is no internet connection **When** the user opens the app **Then** the cached data from last session is displayed.
@@ -50,7 +50,7 @@ __User story: **As a** user **I should be able to** use the app offline **So tha
 
 **FEATURE 5: DATA VISUALIZATION**
 
-__User story: **As a** user **I should be able to** see a chart with the number of upcoming events **So that** I can better and faster perceive the information about events in different cities.__
+*User story: **As a** user **I should be able to** see a chart with the number of upcoming events **So that** I can better and faster perceive the information about events in different cities.*
 
 **Scenario 1: Show a chart with the number of upcoming events in each city.**
 **Given** the user has received a list of upcoming events **When** the user clicks on the “Visualise” button **Then** a chart with the number of upcoming events in the chosen city is displayed.
