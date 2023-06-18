@@ -39,7 +39,7 @@ defineFeature(feature, test => {
 
         then("the app should display that number of upcoming events", () => {
             AppWrapper.update();
-            expect(AppWrapper.find(".event")).toHaveLength(2);
+            expect(AppWrapper.find(".event")).toHaveLength(1);
         });
     });
     

@@ -32,7 +32,7 @@ defineFeature(feature, test => {
 
         given("the main page is open", () => {
             locations = extractLocations(mockData);
-            CitySearchWrapper = shallow(<CitySearchWrapper updateEvents={() => { }} locations={locations} />);
+            CitySearchWrapper = shallow(<CitySearch updateEvents={() => { }} locations={locations} />);
         });
         when("the user starts typing in the city textbox", () => {
             CitySearchWrapper.find(".city").simulate("change", { target: { value: "Berlin" } });

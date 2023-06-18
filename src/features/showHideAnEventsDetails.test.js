@@ -51,7 +51,7 @@ defineFeature(feature, test => {
             expect(AppWrapper.find(".event__Details").at(0)).toHaveLength(1);
         });
 
-        when("he user clicks the 'hide details' button", () => {
+        when("the user clicks the 'hide details' button", () => {
             AppWrapper.find(".event button").at(0).simulate("click");
         });
 
