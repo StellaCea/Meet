@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
+import { WarningAlert } from './Alert';
 import "./nprogress.css";
 import NProgress  from 'nprogress';
 
@@ -14,7 +15,7 @@ class App extends Component {
     locations: [],
     eventCount: 32,
     location: "all",
-    selectedCity: null
+    selectedCity: null,
   }
 
   componentDidMount() {
@@ -83,12 +84,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className='Name'>Meet App</h1>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
         <NumberOfEvents 
           selectedCity={this.state.selectedCity}
           query={this.state.eventCount}
           updateEvents={this.updateEvents} />
+          {!navigator.onLine ? <WarningAlert text={"You're offline, events might not be up to date"} /> : null }
+        <EventList events={this.state.events} />
+        
     </div>
     );
   }

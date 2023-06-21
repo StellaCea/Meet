@@ -34,7 +34,7 @@ defineFeature(feature, test => {
         });
 
         when("the user specifies the number of events they want to see", () => {
-            AppWrapper.find(".numbOfEvents").simulate("change", { target: { value: 1 } });
+            AppWrapper.find(".numberOfEvents").simulate("change", { target: { value: 1 } });
         });
 
         then("the app should display that number of upcoming events", () => {

@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -7,11 +8,13 @@
 
 .App * {
   box-sizing: border-box;
+
 }
 
 ul {
   padding: 0;
   list-style: none;
+
 }
 
 p {
@@ -79,15 +82,17 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding: 6px 12px;
   margin-bottom: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
+  text-align: center;
+  border: 1px solid black;
   border-radius: 4px;
   position: relative;
+  justify-content: center;
 }
 
 .details-btn {
+  margin-top: 40px;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -95,6 +100,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: #9eb6dc;
 }
 
 .name {
@@ -122,6 +128,10 @@ input[type="number"] {
   text-align: center;
 }
 
+.eventCount {
+  margin:20px auto
+}
+
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -132,7 +142,13 @@ input[type="number"] {
 
 .Alert {
   position: fixed;
-  top: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 10px;
 }
 
 .data-vis-wrapper {
@@ -205,6 +221,16 @@ input[type="number"] {
   font-size: 14px;
   letter-spacing: 0.2px;
   font-family: "Roboto";
+}
+
+.Name{
+  border: 1px;
+  width: 300px;
+  height: 72px;
+  padding: 15px;
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 0px 1px 5px #e9ebee;
 }
 
 
