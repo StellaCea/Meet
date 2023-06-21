@@ -2,6 +2,15 @@ import { mockData } from "./mock-data";
 import axios from "axios";
 import NProgress from "nprogress";
 
+/**
+ *
+ * @param {*} events:
+ * The following function is to be in api.js.
+ * This function takes an events array, then uses map to create a new array with only locations.
+ * Lastly, we remove all duplicates by creating another new array by using the spread operator and spreading a Set.
+ * The Set removes all duplicates from the array
+ */
+
 export const extractLocations = (events) => {
     var extractLocations = events.map((event) => event.location);
     var locations = [...new Set(extractLocations)];
@@ -30,7 +39,7 @@ const getToken = async (code) => {
         .catch((error) => error);
     access_token && localStorage.setItem("access_token", access_token);
     return access_token;
-}
+};
 
 export const getEvents = async() => {
     NProgress.start();
@@ -81,14 +90,14 @@ export const getAccessToken = async () => {
         return code && getAccessToken(code);
     }
     return accessToken;
+};
 
-    // access token found in localStorage
-    const checkToken = async (accessToken) => {
-        const result = await fetch (
-            `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
-        )
-            .then((res) => res.json())
-            .catch((error) => error.json());
-        return result;
-    }
-}
+export const checkToken = async (accessToken) => {
+    const result = await fetch (
+        `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+    )
+        .then((res) => res.json())
+        .catch((error) => error.json());
+    return result;
+};
+
