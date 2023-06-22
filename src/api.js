@@ -52,7 +52,7 @@ export const getEvents = async() => {
     if (!navigator.onLine) {
         const data = localStorage.getItem("lastEvents");
         NProgress.done();
-        return data?JSON.parse(events).events:[];;
+        return data?JSON.parse(data).events:[];
     }
 
     const token = await getAccessToken();
@@ -87,7 +87,7 @@ export const getAccessToken = async () => {
             const { authUrl } = results.data;
             return (window.location.href = authUrl);
         }
-        return code && getAccessToken(code);
+        return code && getToken(code);
     }
     return accessToken;
 };
