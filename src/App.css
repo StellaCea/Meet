@@ -122,6 +122,7 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1rem;
+  border: 1px solid #33A9AC;
 }
 .details {
   padding: 6px 12px;
@@ -141,7 +142,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: rgba(51, 169, 172, 1);
+  background-color: #33A9AC;
 }
 
 .name {

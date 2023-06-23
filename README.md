@@ -1,4 +1,4 @@
-**Meet App** assists users in discovering, organizing and participating in events that take place in different cities.
+**MEET APP** assists users in discovering, organizing and participating in events that take place in different cities.
 
 The app is a serverless, progressive web apllication (PWA) build with React using test-driven development (TDD) and behavior driven development (BDD) techniques. The application uses the Google Calendar API to fetch upcoming events. The authorization process is handled by AWS Lambda functions. The app is capable to work offline with cached data.
 
@@ -54,8 +54,4 @@ The app is a serverless, progressive web apllication (PWA) build with React usin
 
 **Scenario 1: Show a chart with the number of upcoming events in each city.**
 **Given** the user has received a list of upcoming events **When** the user clicks on the “Visualise” button **Then** a chart with the number of upcoming events in the chosen city is displayed.
-
-**How I'll use serverless functions:**
-I have already set up a project in the Google Console and enabled Google Calendar API. This will allow my serverless function to interact with the Calendar API. Then I will write code to create, retrieve, update events, or perform other operations on the calendar. The next step is authentication. I’ll use OAuth 2.0 to obtain an access token that will grunt my friction with the necessary permissions to interact with the Calendar API on behalf of the user. I’ll use HTTP requests (create, read, update, delete) to make API calls from the serverless function to the google calendar API endpoints. To finalize, I will deploy and test the serverless function. 
-
 
