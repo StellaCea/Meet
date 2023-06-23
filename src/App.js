@@ -117,8 +117,9 @@ class App extends Component {
       <div className="App">
         <header className='header'>
           <div className='header_logo'>
-            <img src={logo} width="200" alt='meet'></img>
+            <img src={logo} width="100" alt='meet'></img>
           </div>
+          <div className='header-menu'>
             <h4>Choose your nearest city</h4>
             <CitySearch locations={this.state.locations} updateEvents={this.      updateEvents} />
             <h4>Select number of events</h4>
@@ -128,6 +129,7 @@ class App extends Component {
               updateEvents={this.updateEvents}
               numberOfEvents={numberOfEvents}
               />
+          </div>
         </header>
         <main>
           <div className='data-vis-wrapper'>
