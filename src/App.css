@@ -21,10 +21,6 @@ p {
   margin: 5px 0;
 }
 
-header {
-  display: flex;
-  margin-bottom: 1rem;
-}
 
 .display-none {
   display: none;
