@@ -31,7 +31,7 @@ function WelcomeScreen(props) {
                 </div>
                 <a
                     href="https://StellaCea.github.io/meet/privacy.html"
-                    rel="nofollow noopener" target="_blank"
+                    rel="noopener" target="_blank"
                 >
                     Privacy policy
                 </a>

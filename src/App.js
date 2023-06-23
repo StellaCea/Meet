@@ -8,6 +8,9 @@ import { WarningAlert } from './Alert';
 import "./nprogress.css";
 import NProgress  from 'nprogress';
 import WelcomeScreen from './WelcomeScreen';
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+} from 'recharts';
 
 class App extends Component {
 
@@ -95,8 +98,19 @@ class App extends Component {
     }
   };
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(", ").shift()
+      return {city, number};
+    })
+    return data;
+  };
+
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className='App' />
+    const { locations, numberOfEvents } = this.state;
     return (
       <div className="App">
         <h1 className='Name'>Meet App</h1>
@@ -104,7 +118,24 @@ class App extends Component {
         <NumberOfEvents 
           selectedCity={this.state.selectedCity}
           query={this.state.eventCount}
-          updateEvents={this.updateEvents} />
+          updateEvents={this.updateEvents}
+          numberOfEvents={numberOfEvents}
+          />
+          <h4>Events in each city</h4>
+
+          <ScatterChart
+          width={400}
+          height={400}
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}
+          >
+            <CartesianGrid />
+            <XAxis type='category' dataKey="city" name='city' />
+            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
           {!navigator.onLine ? <WarningAlert text={"You're offline, events might not be up to date"} /> : null }
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={()=> { getAccessToken() }} />
