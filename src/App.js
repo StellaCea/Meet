@@ -115,16 +115,22 @@ class App extends Component {
     const { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
-        <h1 className='Name'>Meet App</h1>
-        <h4>Choose your nearest city</h4>
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents 
-          selectedCity={this.state.selectedCity}
-          query={this.state.eventCount}
-          updateEvents={this.updateEvents}
-          numberOfEvents={numberOfEvents}
-        />
-        <div className='data-vis-wrapper'>
+        <header className='header'>
+          <div className='header_logo'>
+            <img src={logo} width="200" alt='meet'></img>
+          </div>
+            <h4>Choose your nearest city</h4>
+            <CitySearch locations={this.state.locations} updateEvents={this.      updateEvents} />
+            <h4>Select number of events</h4>
+            <NumberOfEvents 
+              selectedCity={this.state.selectedCity}
+              query={this.state.eventCount}
+              updateEvents={this.updateEvents}
+              numberOfEvents={numberOfEvents}
+              />
+        </header>
+        <main>
+          <div className='data-vis-wrapper'>
           <EventGenre events={this.state.events} />
           <h4>Events in each city</h4>
           <ResponsiveContainer height={400}>
@@ -144,6 +150,7 @@ class App extends Component {
         </div>
         {!navigator.onLine ? <WarningAlert text={"You're offline, events might not be up to date"} /> : null }
         <EventList events={this.state.events} />
+        </main>
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={()=> { getAccessToken() }} />
     </div>
     );

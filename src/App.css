@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url(https://fonts.googleapis.com/css?family=Jost:400);
 
 
 .App {
@@ -21,6 +21,10 @@ p {
   margin: 5px 0;
 }
 
+header {
+  display: flex;
+  margin-bottom: 1rem;
+}
 
 .display-none {
   display: none;
@@ -101,14 +105,14 @@ input[type="number"] {
 
 .details-btn {
   margin-top: 40px;
-  position: absolute;
+  position: relative;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: #9eb6dc;
+  background-color: rgba(51, 169, 172, 1);
 }
 
 .name {
@@ -173,18 +177,6 @@ label {
 .recharts-surface {
   overflow: visible;
 }
-
-.Name{
-  border: 1px;
-  width: 300px;
-  height: 72px;
-  padding: 15px;
-  margin: auto;
-  margin-bottom: 20px;
-  box-shadow: 0px 1px 5px #e9ebee;
-}
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
