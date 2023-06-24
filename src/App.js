@@ -120,9 +120,7 @@ class App extends Component {
             <img src={logo} width="100" alt='meet'></img>
           </div>
           <div className='header-menu'>
-            <h4>Choose your nearest city</h4>
             <CitySearch locations={this.state.locations} updateEvents={this.      updateEvents} />
-            <h4>Select number of events</h4>
             <NumberOfEvents 
               selectedCity={this.state.selectedCity}
               query={this.state.eventCount}
