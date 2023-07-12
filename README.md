@@ -1,3 +1,5 @@
+![MeetScreen1](https://github.com/StellaCea/Meet/assets/80626240/66689ccf-e218-4f4d-a0a0-f54dd3e146ec)
+
 **MEET APP** assists users in discovering, organizing and participating in events that take place in different cities.
 
 The app is a serverless, progressive web apllication (PWA) build with React using test-driven development (TDD) and behavior driven development (BDD) techniques. The application uses the Google Calendar API to fetch upcoming events. The authorization process is handled by AWS Lambda functions. The app is capable to work offline with cached data.
