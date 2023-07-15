@@ -135,7 +135,6 @@ class App extends Component {
         </div>
 
         <main>
-          <h4>Events in each city</h4>
           <div className='data-vis-wrapper'>
             
             <EventGenre events={this.state.events} />
