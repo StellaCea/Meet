@@ -38,8 +38,10 @@ class CitySearch extends Component {
     }
     render() {
         return (
-            <div className="CitySearch">
-                <label htmlFor="cityInp">Select a city</label>
+            <div className="CitySearch-container">
+                <div>Choose your nearest city</div>
+                
+                <label htmlFor="cityInp" className="field">City Search</label>
                 <InfoAlert text={this.state.infoText} />
                 <input
                     type="text"

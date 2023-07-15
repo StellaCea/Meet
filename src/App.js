@@ -8,11 +8,13 @@ import { WarningAlert } from './Alert';
 import "./nprogress.css";
 import NProgress  from 'nprogress';
 import WelcomeScreen from './WelcomeScreen';
+import Header from './Header';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
-import logo from "./meet-logo.png";
+
 import EventGenre from './EventGenre';
+
 
 class App extends Component {
 
@@ -27,6 +29,7 @@ class App extends Component {
 
   async componentDidMount() {
     this.mounted = true;
+
     const accessToken = localStorage.getItem("access_token");
     let isTokenValid;
     if (accessToken && !navigator.onLine){
@@ -36,7 +39,9 @@ class App extends Component {
     }
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
+
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
@@ -51,6 +56,7 @@ class App extends Component {
   }
 
   updateEvents = (location, eventCount) => {
+
     if (!eventCount) {
       getEvents().then((events) => {
         const locationEvents =
@@ -115,20 +121,19 @@ class App extends Component {
     const { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
-        <header className='header'>
-          <div className='header_logo'>
-            <img src={logo} width="100" alt='meet'></img>
-          </div>
-          <div className='header-menu'>
-            <CitySearch locations={this.state.locations} updateEvents={this.      updateEvents} />
-            <NumberOfEvents 
-              selectedCity={this.state.selectedCity}
-              query={this.state.eventCount}
-              updateEvents={this.updateEvents}
-              numberOfEvents={numberOfEvents}
-              />
-          </div>
-        </header>
+        <Header />
+        <div className='container-upper'>
+          <CitySearch 
+            locations={this.state.locations} 
+            updateEvents={this.updateEvents} />
+          <NumberOfEvents 
+            selectedCity={this.state.selectedCity}
+            query={this.state.eventCount}
+            updateEvents={this.updateEvents}
+            numberOfEvents={numberOfEvents}
+            />
+        </div>
+
         <main>
           <h4>Events in each city</h4>
           <div className='data-vis-wrapper'>

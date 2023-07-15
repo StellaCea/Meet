@@ -6,9 +6,10 @@
   padding: 2% 5%;
 }
 
-.App * {
+* {
   box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -24,24 +25,18 @@ header {
   display: flex;
   margin-bottom: 1rem;
 }
-.header-menu {
-  margin: auto;
+
+.header-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .header-menu {
-    flex-direction: column;
-    align-items: center;
-  }
+.meet-app-icon {
+  height: auto;
+  margin-right: .5rem;
+  width: 200px;
 }
 
 .display-none {
@@ -68,24 +63,30 @@ input[type="number"] {
   width: 250px;
 }
 
-.CitySearch {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 300px;
-  max-width: 300px;
-  margin: auto;
+.CitySearch-container {
+  margin-top: 2rem;
   position: relative;
+  text-align: center;
+}
+
+.field {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
 
 .suggestions {
-  width: 250px;
+  left: 0;
+  margin: 0 auto;
   position: absolute;
+  right: 0;
+  top: 60px;
   z-index: 2;
-  align-self: center;
-  margin: 0;
-  top: 43px;
-  font-size: 14px;
-  border-top: 0px;
 }
 
 .suggestions>li {
@@ -104,11 +105,8 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.NumberOfEvents {
-  display: flex;
-  position: relative;
-  width: 200px;
-  margin: auto;
+.NumberOfEvents-container {
+  text-align: center;
 }
 
 .eventCount {
@@ -168,8 +166,6 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-
-
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -203,6 +199,19 @@ label {
 .recharts-surface {
   overflow: visible;
 }
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .container-upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
@@ -215,4 +224,10 @@ label {
     min-width: auto;
     margin: 0 auto;
   }
+
+    @media screen and (max-width: 576px) {
+      .event-list {
+        grid-template-columns: 1fr;
+      }
+    }
 }
