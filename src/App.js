@@ -45,6 +45,7 @@ class App extends Component {
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
+          events = events.slice(0, this.state.eventCount);
           this.setState({ events, locations: extractLocations(events) });
         }
       });
@@ -74,7 +75,7 @@ class App extends Component {
         const locationEvents = events.filter((event) =>
           this.state.locations.includes(event.location)
         );
-        const shownEvents = locationEvents.slice(0, eventCount);
+        const shownEvents = locationEvents.slice(0, this.state.eventCount);
         this.setState({
           events: shownEvents,
           eventCount: eventCount
@@ -83,7 +84,7 @@ class App extends Component {
     } else if (this.state.selectedCity === "all") {
       getEvents().then((events) => {
         const locationEvents = events;
-        const shownEvents = locationEvents.slice(0, eventCount);
+        const shownEvents = locationEvents.slice(0, this.state.eventCount);
         this.setState({
           events: shownEvents,
           eventCount: eventCount,
@@ -97,7 +98,7 @@ class App extends Component {
             :events.filter(
               (event) => this.state.selectedCity === event.location
             );
-        const shownEvents = locationEvents.slice(0, eventCount);
+        const shownEvents = locationEvents.slice(0, this.state.eventCount);
         this.setState({
           events: shownEvents,
           eventCount: eventCount,
@@ -109,9 +110,9 @@ class App extends Component {
   getData = () => {
     const {locations, events} = this.state;
     const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length
+      const number = events.filter((event) => event.location === location).length;
       const city = location.split(", ").shift()
-      return {city, number};
+      return { city, number };
     })
     return data;
   };
