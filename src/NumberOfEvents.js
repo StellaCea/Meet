@@ -26,7 +26,6 @@ class NumberOfEvents extends Component {
     render () {
         return (
             <div className="NumberOfEvents-container">
-                
                 <label htmlFor="eventCount" className="field">Select number of events</label>
                 <input 
                     type="number"
