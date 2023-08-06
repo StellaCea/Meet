@@ -1,4 +1,5 @@
-![MeetScreen1](https://github.com/StellaCea/Meet/assets/80626240/66689ccf-e218-4f4d-a0a0-f54dd3e146ec)
+![Meet View](https://github.com/StellaCea/Meet/assets/80626240/2b6d362e-a4e3-4ff3-bac5-6d4199e75360)
+
 
 **MEET APP** assists users in discovering, organizing and participating in events that take place in different cities.
 
